@@ -1,3 +1,5 @@
-var bar_chart = document.getElementById('bar_chart');
+var vg_1 = 'weather-data.json'
 
-console.log(bar_chart);
+vegaEmbed("#bar_chart", vg_1).then(function(result) {
+    
+}).catch(console.error);
