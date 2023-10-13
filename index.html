@@ -9,6 +9,10 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="style.css">
 
         <title>FIT3179 Assignment 2</title>
@@ -16,7 +20,30 @@
     </head>
 
     <body>
-        <div id="map_1"></div>
+        <h2>Analyzing a Decade of Climate Trends in Australia</h2>
+        <h3>Temperature in Australia (2013 - 2023)</h3>
+
+        <div id="container">
+            <select id="mapSelector">
+                <option value="minimum-temperature.json">Minimum Temperature</option>
+                <option value="maximum-temperature.json">Maximum Temperature</option>
+            </select>
+            
+            <div id="map_container">
+                <div id="map_1"></div>
+                <div id="map_2"></div>
+            </div>
+            
+        </div>
+
+        <h3>Wind Gust in Australia (2013 - 2023)</h3>
+
+        <div id="container">
+            <div id="two-column">
+                <div id="map_container"></div>
+                <div id="map_container"></div>
+            </div>
+        </div>
 
         <script src="script.js"></script>
     </body>

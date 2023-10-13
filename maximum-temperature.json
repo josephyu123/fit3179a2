@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Weather data of Australia on a map",
+    "width": "container",
+    "height": "container",
+    "data": {
+        "url": "filtered-data/world-map.geojson",
+        "format": {
+            "type": "json",
+            "property": "features"
+        }
+    },
+    "projection": {
+        "type": "mercator",
+        "center": [134, -28],
+        "scale": 700
+    },
+    "layer": [
+        {
+            "mark": {"type": "geoshape", "fill": "#eee", "stroke": "#aaa"}
+        },
+        {
+            "data": {"url": "filtered-data/geocoded-weather-test-data.csv"},
+            "mark": {
+                "type": "circle",
+                "stroke": "#000000",
+                "strokeWidth": 0.5
+            },
+            "transform": [
+                {
+                    "calculate": "{'type': 'Point', 'coordinates': [datum.longitude, datum.latitude]}",
+                    "as": "geojson"
+                }
+            ],
+            "encoding": {
+                "longitude": {"field": "longitude", "type": "quantitative"},
+                "latitude": {"field": "latitude", "type": "quantitative"},
+                "color": {
+                    "field": "MaxTemp",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [-10, 0, 10, 20, 30],
+                        "range": ["blue", "lightblue", "lightyellow", "yellow", "red"]
+                    },
+                    "legend": {
+                        "title": "Temperature (Degree Celsius)",
+                        "titleFont": "Roboto"
+                    }
+                },
+                "size": {"value": 100},
+                "tooltip": [
+                    {"field": "Location", "type": "nominal", "title": "Location name"},
+                    {"field": "MaxTemp", "type": "quantitative", "title": "Degree Celsius"}
+                ]
+            }
+        }
+    ]
+}

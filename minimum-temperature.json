@@ -13,7 +13,7 @@
     "projection": {
         "type": "mercator",
         "center": [134, -28],
-        "scale": 1100
+        "scale": 700
     },
     "layer": [
         {
@@ -21,7 +21,11 @@
         },
         {
             "data": {"url": "filtered-data/geocoded-weather-test-data.csv"},
-            "mark": "circle",
+            "mark": {
+                "type": "circle",
+                "stroke": "#000000",
+                "strokeWidth": 0.5
+            },
             "transform": [
                 {
                     "calculate": "{'type': 'Point', 'coordinates': [datum.longitude, datum.latitude]}",
@@ -31,8 +35,23 @@
             "encoding": {
                 "longitude": {"field": "longitude", "type": "quantitative"},
                 "latitude": {"field": "latitude", "type": "quantitative"},
-                "color": {"field": "MinTemp", "type": "quantitative"},
-                "size": {"value": 50}
+                "color": {
+                    "field": "MinTemp",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [-10, 0, 10, 20, 30],
+                        "range": ["blue", "lightblue", "lightyellow", "yellow", "red"]
+                    },
+                    "legend": {
+                        "title": "Temperature (Degree Celsius)",
+                        "titleFont": "Roboto"
+                    }
+                },
+                "size": {"value": 100},
+                "tooltip": [
+                    {"field": "Location", "type": "nominal", "title": "Location name"},
+                    {"field": "MinTemp", "type": "quantitative", "title": "Degree Celsius"}
+                ]
             }
         }
     ]
