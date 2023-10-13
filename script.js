@@ -1,5 +1,5 @@
-var vg_1 = 'weather-data.json'
+config = 'weather-data.json';
 
-vegaEmbed("#bar_chart", vg_1).then(function(result) {
+vegaEmbed("#map_1", config).then(function(result) {
     
 }).catch(console.error);
