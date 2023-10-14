@@ -20,7 +20,7 @@
             "mark": {"type": "geoshape", "fill": "#eee", "stroke": "#aaa"}
         },
         {
-            "data": {"url": "filtered-data/geocoded-weather-test-data.csv"},
+            "data": {"url": "data/min-temperature.csv"},
             "mark": {
                 "type": "circle",
                 "stroke": "#000000",
@@ -33,13 +33,13 @@
                 }
             ],
             "encoding": {
-                "longitude": {"field": "longitude", "type": "quantitative"},
-                "latitude": {"field": "latitude", "type": "quantitative"},
+                "longitude": {"field": "LON", "type": "quantitative"},
+                "latitude": {"field": "LAT", "type": "quantitative"},
                 "color": {
-                    "field": "MinTemp",
+                    "field": "Annual",
                     "type": "quantitative",
                     "scale": {
-                        "domain": [-10, 0, 10, 20, 30],
+                        "domain": [0, 10, 20, 30, 40],
                         "range": ["blue", "lightblue", "lightyellow", "yellow", "red"]
                     },
                     "legend": {
@@ -49,8 +49,8 @@
                 },
                 "size": {"value": 100},
                 "tooltip": [
-                    {"field": "Location", "type": "nominal", "title": "Location name"},
-                    {"field": "MinTemp", "type": "quantitative", "title": "Degree Celsius"}
+                    {"field": "STATION_NAME", "type": "nominal", "title": "Location name"},
+                    {"field": "Annual", "type": "quantitative", "title": "Degree Celsius"}
                 ]
             }
         }

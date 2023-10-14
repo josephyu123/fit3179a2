@@ -10,8 +10,8 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="style.css">
 
@@ -20,30 +20,74 @@
     </head>
 
     <body>
-        <h2>Analyzing a Decade of Climate Trends in Australia</h2>
-        <h3>Temperature in Australia (2013 - 2023)</h3>
+        <h2>Analyzing a Century of Climate Predictions in Australia (2020 - 2099)</h2>
 
         <div id="container">
             <select id="mapSelector">
-                <option value="minimum-temperature.json">Minimum Temperature</option>
-                <option value="maximum-temperature.json">Maximum Temperature</option>
+                <option value="minimum-temperature.json">Lowest Temperature</option>
+                <option value="maximum-temperature.json">Highest Temperature</option>
             </select>
             
             <div id="map_container">
                 <div id="map_1"></div>
                 <div id="map_2"></div>
             </div>
-            
-        </div>
 
-        <h3>Wind Gust in Australia (2013 - 2023)</h3>
+            <div id="paragraph_container">
+                <h3>Prediction 1: Lowest and Highest Temperature</h3>
 
-        <div id="container">
-            <div id="two-column">
-                <div id="map_container"></div>
-                <div id="map_container"></div>
+                <p>
+                    This map showcases the anticipated lowest and highest temperatures across various Australian
+                    locations for the remainder of the century. By utilizing a gradient of warm to cool colors, it
+                    vividly displays both ends of the temperature extremities expected in each region. Engaging with
+                    this visualization offers a comprehensive view into the coldest and hottest seasons Australia may
+                    experience.
+                </p>
+
+                <p>
+                    <i>Hover the cursor over each data point to uncover
+                        different location's temperature fluctuations and gain insights into Australia's
+                        evolving climate patterns.</i>
+                </p>
             </div>
         </div>
+
+        <div id="container">
+            <div id="paragraph_container">
+                <h3>Prediction 2: Average Temperature</h3>
+
+                <p>
+                    Dive into a century of average temperature projections with this comprehensive
+                    map of Australia. Each data point, represented by a warm color spectrum, illustrates
+                    the mean temperatures anticipated for various locations. This visualization serves as a
+                    testament to Australia's evolving climate narrative, highlighting both the uniformities
+                    and disparities in temperature fluctuations across the country. Engage with the map to
+                    explore how the heart of the continent might feel in the coming decades.
+                </p>
+
+                <p>
+                    <i>Hover the cursor over each data point to uncover
+                    different location's temperature fluctuations and gain insights into Australia's
+                    evolving climate patterns.</i>
+                </p>
+            </div>
+
+            <select id="yearSelector">
+                <option value="avg-temperature-2020-2039.json">2020 - 2039</option>
+                <option value="avg-temperature-2040-2059.json">2040 - 2059</option>
+                <option value="avg-temperature-2060-2079.json">2060 - 2079</option>
+                <option value="avg-temperature-2080-2099.json">2080 - 2099</option>
+            </select>
+
+            <div id="map_container">
+                <div id="map_3"></div>
+                <div id="map_4"></div>
+                <div id="map_5"></div>
+                <div id="map_6"></div>
+            </div>
+        </div>
+
+        <div id="padding1px"></div>
 
         <script src="script.js"></script>
     </body>
