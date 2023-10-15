@@ -20,7 +20,7 @@
             "mark": {"type": "geoshape", "fill": "#eee", "stroke": "#aaa"}
         },
         {
-            "data": {"url": "data/max-temperature.csv"},
+            "data": {"url": "filtered-data/max-temperature.csv"},
             "mark": {
                 "type": "circle",
                 "stroke": "#000000",
